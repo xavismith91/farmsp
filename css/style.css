@@ -176,7 +176,7 @@ body {
     width: 800px; /* Tamaño del carrusel */
     height: 300px; /* Tamaño del carrusel */
     margin: 0 auto; /* Centrar el carrusel */
-    position: relative; /* Posición relativa para el contenedor */
+    position: fixed; /* Posición relativa para el contenedor */
   }
   
   .lista-imagenes {
