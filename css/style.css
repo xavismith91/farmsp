@@ -11,7 +11,7 @@ body {
 .header {
     background-color: #0073b1;
     color: white;
-    padding: 10px 0;
+    padding: 32px 0;
 }
 
 .container {
@@ -60,9 +60,11 @@ body {
 .menu ul li a {
     color: white;
     text-decoration: none;
+    justify-content: center;
 }
 
 .user-options a {
+
     color: white;
     text-decoration: none;
     margin-left: 15px;
@@ -87,7 +89,7 @@ body {
     margin: 0;
     border-radius: 5px;
     opacity: 0;
-    transition: all 0.5s ease-in-out;
+    /* transition: all 0.9s ease-in-out; */
 }
 
 .dropdown-menu li {
@@ -136,3 +138,32 @@ body {
         margin-top: 10px;
     }
 }
+
+
+/*------------------------------------------------------------------
+    LOADER 
+-------------------------------------------------------------------*/
+
+#preloader {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 11000;
+    position: fixed;
+    display: block;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #ffffff;
+}
+
+.loader {
+  display: inline-flex;
+  flex-wrap: wrap;
+  width: 258px;
+  height: 229px;
+}
+
