@@ -49,18 +49,20 @@ body {
 .menu ul {
     display: flex;
     list-style: none;
+    padding-top: 35px;
 }
 
 .menu ul li {
     margin: 0 10px;
     position: relative;
-    
+    padding: 10px;
 }
 
 .menu ul li a {
     color: white;
     text-decoration: none;
     justify-content: center;
+    align-items: center;
 }
 
 .user-options a {
@@ -68,7 +70,6 @@ body {
     color: white;
     text-decoration: none;
     margin-left: 15px;
-    display: flex;
     align-items: center;
 }
 
@@ -167,3 +168,64 @@ body {
   height: 229px;
 }
 
+/*------------------------------------------------------------------
+    CARRUSEL DE IMÁGENES
+-------------------------------------------------------------------*/
+
+.contenedor-carrusel {
+    width: 800px; /* Tamaño del carrusel */
+    height: 300px; /* Tamaño del carrusel */
+    margin: 0 auto; /* Centrar el carrusel */
+    position: relative; /* Posición relativa para el contenedor */
+  }
+  
+  .lista-imagenes {
+    list-style: none; /* Eliminar viñetas */
+    padding: 0;
+    margin: 0;
+    position: absolute; /* Posición absoluta para las imágenes */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ancho del contenedor de imágenes */
+    height: 100%; /* Altura del contenedor de imágenes */
+    transition: transform 0.5s ease-in-out; /* Animación de transición */
+  }
+  
+  .imagen {
+    width: 100%; /* Ancho de la imagen */
+    height: 100%; /* Altura de la imagen */
+    object-fit: cover; /* Ajustar la imagen al contenedor */
+    display: none; /* Ocultar las imágenes inicialmente */
+  }
+  
+  .imagen.active {
+    display: block; /* Mostrar la imagen activa */
+  }
+  
+  .indicadores {
+    position: absolute; /* Posición absoluta para los indicadores */
+    bottom: 20px; /* Posición inferior de los indicadores */
+    left: 50%; /* Posición central horizontal de los indicadores */
+    transform: translateX(-50%); /* Centrar los indicadores horizontalmente */
+  }
+  
+  .indicador {
+    display: inline-block; /* Mostrar los indicadores en línea */
+    width: 10px; /* Ancho de los indicadores */
+    height: 10px; /* Altura de los indicadores */
+    margin: 0 5px; /* Espacio entre indicadores */
+    background-color: #ccc; /* Color de los indicadores */
+    border-radius: 50%; /* Forma circular de los indicadores */
+    transition: background-color 0.5s ease-in-out; /* Animación de transición */
+  }
+  
+  .indicador.active {
+    background-color: #0073b1; /* Color del indicador activo */
+  }
+  
+  /* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .contenedor-carrusel {
+      height: 250px; /* Ajustar la altura del carrusel para pantallas pequeñas */
+    }
+  }
