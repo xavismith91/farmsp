@@ -1,19 +1,16 @@
-const imagenes = document.querySelectorAll('.imagen');
-const indicadores = document.querySelectorAll('.indicador');
+const btnleft = document.querySelector(".btnleft"),
+      btnright = document.querySelector(".btnright"),
+      slider = document.querySelector("#slider"),
+      sliderSection = document.querySelectorAll(".slider-section");
 
-let indiceActivo = 0;
 
-function mostrarImagen(indice) {
-  imagenes.forEach(imagen => imagen.style.display = 'none');
-  imagenes[indice].style.display = 'block';
+btnLeft.addEventListener("click", e => moveToLeft())
+btnRight.addEventListener("click", e => moveToRight())
 
-  indicadores.forEach(indicador => indicador.classList.remove('active'));
-  indicadores[indice].classList.add('active');
+function moveToRight() {
+  slider.style.transform = "translate(-33.3%)"
 }
 
-mostrarImagen(indiceActivo);
+function moveToLeft() {
 
-setInterval(() => {
-  indiceActivo = (indiceActivo + 1) % imagenes.length;
-  mostrarImagen(indiceActivo);
-}, 5000); // 5 segundos por imagen
+}

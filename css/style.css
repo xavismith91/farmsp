@@ -6,6 +6,7 @@
 
 body {
     font-family: Arial, sans-serif;
+    justify-content: center;
 }
 
 .header {
@@ -172,60 +173,171 @@ body {
     CARRUSEL DE IMÁGENES
 -------------------------------------------------------------------*/
 
-.contenedor-carrusel {
-    width: 800px; /* Tamaño del carrusel */
-    height: 300px; /* Tamaño del carrusel */
-    margin: 0 auto; /* Centrar el carrusel */
-    position: fixed; /* Posición relativa para el contenedor */
-  }
-  
-  .lista-imagenes {
-    list-style: none; /* Eliminar viñetas */
+
+/* * {
     padding: 0;
     margin: 0;
-    position: absolute; /* Posición absoluta para las imágenes */
-    top: 0;
-    left: 0;
-    width: 100%; /* Ancho del contenedor de imágenes */
-    height: 100%; /* Altura del contenedor de imágenes */
-    transition: transform 0.5s ease-in-out; /* Animación de transición */
+    box-sizing: border-box;
+}
+
+
+.slider-section img {
+    width: 500px;
+}
+
+.container-carousel {
+    position: relative;
+    width: 100%;
+    height: 300%;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.carruseles {
+    width: 300%;
+    height: 100%;
+    display: flex;
+}
+
+
+.slider-section {
+    width: calc(100% / 3);
+}
+
+
+.slider-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 15px;
+}
+
+
+.btn-left,
+.btn-right {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    background-color: transparent;
+    border-radius: 50%;
+    padding: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #ffffff81;
+    transform: translate(0,-50);
+    transition: .3s ease;
+    user-select: none;
+}
+
+.btn-left:hover,
+.btn-right:hover {
+    background-color: #333333d4;
+    color: #fff;
+}
+
+
+.btn-left {
+    left: 10px;
+}
+
+
+.btn-right {
+    right: 10px;
+} */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.slider{
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+}
+.slider ul{
+    display: flex;
+    animation: cambio 20s infinite alternate linear;
+    width: 400%;
+}
+.slider li{
+    width: 100%;
+    list-style: none;
+}
+.slider img{
+    width: 100%;
+    height: 90%;
+}
+@keyframes cambio{
+    0%{margin-left: 0;}
+    20%{margin-left: 0;}
+    
+    25%{margin-left: -100%;}
+    45%{margin-left: -100%;}
+    
+    50%{margin-left: -200%;}
+    70%{margin-left: -200%;}
+    
+    75%{margin-left: -300%;}
+    100%{margin-left: -300%;}
+}
+@media only screen and (min-width:320px) and (max-width:768px){
+.slider, .slider ul, .slider img{
+    height: 100vh;
+}
+}
+
+
+.contenedor-galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 2000px;
+    margin: 0 auto;
+    padding: 20px;
   }
-  
+
   .imagen {
-    width: 100%; /* Ancho de la imagen */
-    height: 100%; /* Altura de la imagen */
-    object-fit: cover; /* Ajustar la imagen al contenedor */
-    display: none; /* Ocultar las imágenes inicialmente */
+    width: 400px; /* Ajustar ancho según necesidad */
+    height: 300px; /* Ajustar alto según necesidad */
+    margin: 10px;
+    border: 1px solid #ccc;
+    overflow: hidden;
   }
-  
-  .imagen.active {
-    display: block; /* Mostrar la imagen activa */
+
+  .imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantener la proporción de la imagen */
   }
-  
-  .indicadores {
-    position: absolute; /* Posición absoluta para los indicadores */
-    bottom: 20px; /* Posición inferior de los indicadores */
-    left: 50%; /* Posición central horizontal de los indicadores */
-    transform: translateX(-50%); /* Centrar los indicadores horizontalmente */
+
+  .descripcion {
+    text-align: center;
+    margin-top: 10px;
   }
-  
-  .indicador {
-    display: inline-block; /* Mostrar los indicadores en línea */
-    width: 10px; /* Ancho de los indicadores */
-    height: 10px; /* Altura de los indicadores */
-    margin: 0 5px; /* Espacio entre indicadores */
-    background-color: #ccc; /* Color de los indicadores */
-    border-radius: 50%; /* Forma circular de los indicadores */
-    transition: background-color 0.5s ease-in-out; /* Animación de transición */
+
+  .boton {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    margin-top: 10px;
   }
-  
-  .indicador.active {
-    background-color: #0073b1; /* Color del indicador activo */
-  }
-  
-  /* Media query para pantallas pequeñas */
-@media (max-width: 768px) {
-    .contenedor-carrusel {
-      height: 250px; /* Ajustar la altura del carrusel para pantallas pequeñas */
+
+  /* Estilos responsivos */
+  @media (max-width: 768px) {
+    .imagen {
+      width: 50%; /* Ajustar ancho para pantallas pequeñas */
     }
   }
+
+  @media (max-width: 480px) {
+    .imagen {
+      width: 100%; /* Ajustar ancho para pantallas muy pequeñas */
+    }
+  }
+  /* Media query para pantallas pequeñas */
+/* @media (max-width: 768px) {
+    .contenedor-carrusel {
+      height: 250px; /* Ajustar la altura del carrusel para pantallas pequeñas */
