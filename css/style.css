@@ -57,6 +57,7 @@ body {
     margin: 0 10px;
     position: relative;
     padding: 10px;
+    /* transform: translate(10%, -40%); */
 }
 
 .menu ul li a {
@@ -64,6 +65,7 @@ body {
     text-decoration: none;
     justify-content: center;
     align-items: center;
+    
 }
 
 .user-options a {
@@ -337,6 +339,21 @@ body {
       width: 100%; /* Ajustar ancho para pantallas muy pequeñas */
     }
   }
+
+  /* slider con tarjetas */
+
+  .cards-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .card {
+    margin: 0.5em;
+    width: calc(100% /2);
+  }
+
+
+
   /* Media query para pantallas pequeñas */
 /* @media (max-width: 768px) {
     .contenedor-carrusel {
