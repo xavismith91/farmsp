@@ -24,7 +24,7 @@
     <header class="header">
         <div class="container">
             <div class="logo">
-            <a href="index.html"><img src="img/logo copy.png" alt="San Pablo Farmacia Logo"></a>    
+                <a href="index.html"><img src="img/logo copy.png" alt="San Pablo Farmacia Logo"></a>
             </div>
             <div class="search">
                 <input type="text" placeholder="¿Qué estás buscando?">
@@ -34,10 +34,10 @@
             </div>
            
             <div class="user-options">
-                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="140" height="40" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                <a href="ofertas.html"><svg xmlns="http://www.w3.org/2000/svg" width="140" height="40" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
                     <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
                   </svg></a>
-                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="140" height="40" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+                <a href="ofertas.html"><svg xmlns="http://www.w3.org/2000/svg" width="140" height="40" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
                     <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l1.25 5h8.22l1.25-5zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
                   </svg></a>
             </div>
@@ -48,21 +48,70 @@
                     <li class="dropdown">
                         <a href="#">Categorías</a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Opción 1</a></li>
-                            <li><a href="#">Opcion 2</a></li>
-                            <li><a href="#">Opción 3</a></li>
+                            <li><a href="#">Medicamentos</a></li>
+                            <li><a href="#">Equipo y Botiquín</a></li>
+                            <li><a href="#">San Pablo Natural</a></li>
+                            <li><a href="#">Vitaminas y suplementos</a></li>
+                            <li><a href="#">Dermocosméticos</a></li>
+                            <li><a href="#">Cuidado Personal y Belleza</a></li>
+                            <li><a href="#">Bebés</a></li>
+                            <li><a href="#">Alimentos y Bebidas</a></li>
+                            <li><a href="#">Salud Sexual</a></li>
                         </ul>
-                    </li>
-                    <li><a href="#">Ofertas</a></li>
-                    <li><a href="#">Sucursales</a></li>
-                    <li><a href="#">Facturación</a></li>
+                    </li> 
+                    <li><a href="ofertas.html">Ofertas</a></li>
                     <li><a href="contacto.html">Contacto</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-   
+    <form action="forms/contact.php" method="post" role="form" >
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <div class="bg-light rounded p-4 p-sm-5 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control border-0" name="nombre" id="gname" placeholder="Gurdian Name" required>
+                                <label for="gname">Nombre</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-floating">
+                                <input type="email" class="form-control border-0" for="floatingInputInvalid" name="correo" id="gmail" placeholder="Gurdian Email" required>
+                                <label for="gmail">Correo</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control border-0" name="telefono" id="cname" placeholder="Child Name" required>
+                                <label for="cname">Teléfono</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control border-0" name="servicio" id="cage" placeholder="Child Age" required>
+                                <label for="cage">Tipo de Servicio</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <textarea class="form-control border-0" name="message" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
+                                <label for="message">Mensaje</label>
+                            </div>
+                        </div>
+                        <br>
+                        
+                        <div class="col-12 text-center">
+                            <button class="btn btn-primary py-3 px-4" type="submit">Enviar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </form>
+    </div>
 
 </body>
 <script src="js/app.js"></script>
