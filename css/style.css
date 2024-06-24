@@ -599,6 +599,21 @@ body {
   }
   
   
+/* texto jstificado  */
+
+.texto-justificado{
+  text-align: justify;
+}
+
+
+.section-politica{
+  align-items: center;
+  padding-top: 6rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
+  padding-bottom: 6rem;
+}
+
 
 
 

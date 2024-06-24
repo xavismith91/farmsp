@@ -63,61 +63,43 @@
                     </li> 
                     <li><a href="ofertas.html">Ofertas</a></li>
                     <li><a href="contacto.html">Contacto</a></li>
-                    <li><a href="politcas.html">Privacidad</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-    <br><br><br>
-    <form action="forms/contact.php" method="post" role="form" >     
-      <center><div class="col-lg-7">
-                <div class="bg-light rounded p-4 p-sm-5 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="row g-3">
-                        <div class="col-sm-6">
-                            <div class="form-floating">
-                                <input type="text" class="form-control border-0" name="nombre" id="gname" placeholder="Gurdian Name" required>
-                                <label for="gname">Nombre</label>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="form-floating">
-                                <input type="email" class="form-control border-0" for="floatingInputInvalid" name="correo" id="gmail" placeholder="Gurdian Email" required>
-                                <label for="gmail">Correo</label>
-                            </div>
-                        </div>
-                        <div class="col-sm-12">
-                            <div class="form-floating ">
-                                <input type="text" class="form-control border-0" name="telefono" id="cname" placeholder="Child Name" required>
-                                <label for="cname">Teléfono</label>
-                            </div>
-                        </div>
-                    
-                        <div class="col-12">
-                            <div class="form-floating">
-                                <textarea class="form-control border-0" name="message" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
-                                <label for="message">Mensaje</label>
-                            </div>
-                        </div>
-                        <br>
-                        
-                        <div class="col-12 text-center">
-                            <button class="btn btn-primary py-3 px-4" type="submit">Enviar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-          </center>
-          <br><br><br>
-        </form>
+
+    <section class="breadcrumbs">
+        <div class="container">
+          <div class="titulo-politica">
+            <h2>Políticas de Privacidad</h2>
+          </div>
+        </div>
+      </section>
+  
+      <section >
+        <div class="section-politica" >
+          <p class="texto-justificado">
+           Es responsable de recabar sus datos personales, del uso que se le dé a los mismos y de su protección, Su información personal será utilizada para promover los servicios y productos que ha solicitado, informarle sobre cambios en los mismos y evaluar la calidad del servicio que le brindamos.
+          </p>
+          <p class="texto-justificado">
+            Para las finalidades antes mencionadas, requerimos los siguientes datos personales: Nombre, Teléfono, Correo Electrónico y Ocupación , Usted tiene derecho a acceder, rectificar, y cancelar sus datos personales, as´ como al tratamiento de los mismos o revocar el consentimiento para tal fin nos haya otorgado, a través de los procedimientos que hemos implementado. Para conocer dichos procedimientos, los requisitos, los plazos, se puede poner en contacto con nuestro departamento de datos personales mediante el correo contacto@secmaseguidad.com.mx que con gusto le atenderán.
+          </p>
+          <p class="texto-justificado">
+            Así mismo, le informamos que sus datos personales pueden ser transferidos y tratados dentro y fuera del país, por distintas empresas a esta empresa. En este sentido, su información puede ser compartida a disitinas empresas con el fin de hacer promoción de Marketing. Para que sus datos sean transferidos.
+          </p>
+          
+          <p class="texto-justificado">
+            Si usted desea dejar de recibir mensajes promocionales de nuestra parte puede solicitarlo a través del teléfono: 55-3057-4694 y al correo centropsicologicoyjuridicorenacer@gmail.com.
+          </p>
+        </div>
+      </section>
 
 </body>
-<br><br><br>
+<br><br><br><br><br>
 <footer id="footer">
-
   <div class="footer-top">
     <div class="container">
       <div class="row">
-
         <div class="col-lg-5 col-md-6 footer-links">
           <h4>Atención a Clientes</h4>
           <ul>
@@ -147,7 +129,13 @@
     </div>
   </div>
 
- 
+  <div id="cookie-consent">
+    <p>Este sitio utiliza cookies para mejorar su experiencia. Al continuar navegando, acepta nuestra <a href="privacidad.html">Política de Privacidad</a> y el uso de cookies.</p>
+    <div>
+        <button id="accept-cookies">Aceptar</button>
+        <button id="decline-cookies">Denegar</button>
+    </div>
+</div>
 
   <div class="container d-md-flex py-4">
 
@@ -164,7 +152,22 @@
 </footer>
 
 
+<script>
+  // Verificar si el usuario ya ha aceptado o denegado las cookies
+  if (localStorage.getItem('cookieConsent') === 'accepted' || localStorage.getItem('cookieConsent') === 'declined') {
+         document.getElementById('cookie-consent').style.display = 'none';
+     }
 
+     document.getElementById('accept-cookies').addEventListener('click', function() {
+         localStorage.setItem('cookieConsent', 'accepted');
+         document.getElementById('cookie-consent').style.display = 'none';
+     });
+
+     document.getElementById('decline-cookies').addEventListener('click', function() {
+         localStorage.setItem('cookieConsent', 'declined');
+         window.location.href = 'index.html';
+     });
+</script>
 
 <script src="js/app.js"></script>
 </html>
