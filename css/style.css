@@ -101,7 +101,7 @@ body {
     border-radius: 5px;
     opacity: 0;
     /* transition: all 0.9s ease-in-out; */
-}
+}s
 
 .dropdown-menu li {
     padding: 10px 20px;
@@ -614,6 +614,86 @@ body {
   padding-bottom: 6rem;
 }
 
+
+
+/* estilos para las tarjetas */
+
+.container-slider{
+  width: 100%;
+  display: flex;
+  max-width: 1100px;
+}
+
+.card {
+  width: 100%;
+  margin: 20px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0px 1px 10px  rgba(0, 0, 0, 0.2);
+  cursor: default;
+  transition: all  400ms eased;
+}
+
+
+.card:hover {
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+  transform: translateY(-3%);
+}
+
+.card img {
+  width: 100%;
+  height: 210px;
+}
+
+.card .contenido {
+  padding: 15px;
+  text-align: center;
+}
+
+.card .contenido p {
+  line-height: 1.5;
+  color: #6a6a6a;
+}
+
+
+.card .contenido h3 {
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+
+.card .contenido a {
+  text-shadow: none;
+  display: inline-block;
+  padding: 10px;
+  margin-top: 10px;
+  color: #2fb4cc;
+  border: 1px solid #2fb4cc;
+  border-radius: 4px;
+  transition:  all 400ms ease;
+}
+
+
+.card .contenido a:hover {
+   background: #2fb4cc;
+   color: #fff;
+}
+
+
+
+
+@media (max-width: 768px) {
+ .container-slider {
+    width: 50%; /* Ajustar ancho para pantallas pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  .container-slider {
+    width: 100%; /* Ajustar ancho para pantallas muy pequeñas */
+  }
+}
 
 
   /* Media query para pantallas pequeñas */
