@@ -618,7 +618,7 @@ body {
 
 /* estilos para las tarjetas */
 
-.container-slider{
+/* .container-slider{
   width: 100%;
   display: flex;
   max-width: 1100px;
@@ -681,20 +681,7 @@ body {
    color: #fff;
 }
 
-
-
-
-@media (max-width: 768px) {
- .container-slider {
-    width: 50%; /* Ajustar ancho para pantallas pequeñas */
-  }
-}
-
-@media (max-width: 480px) {
-  .container-slider {
-    width: 100%; /* Ajustar ancho para pantallas muy pequeñas */
-  }
-}
+ */
 
 
   /* Media query para pantallas pequeñas */
