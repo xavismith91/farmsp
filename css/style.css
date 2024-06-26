@@ -32,6 +32,8 @@ body {
 
 .logo img {
     height: 50px;
+    width: 55px;
+    border-radius: 4rem;
 }
 
 .search {
