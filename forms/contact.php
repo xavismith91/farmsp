@@ -21,7 +21,8 @@
       <h3> Teléfono de Contacto: $telefono</h3>
       <br>
       <br>
-      <h2> $mensaje </h2>
+      <p> $mensaje <p>
+      <p> $mensaje <p>
       <br>
       <br>
       <h3>
