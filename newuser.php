@@ -44,12 +44,15 @@ $sql = "INSERT INTO userspharmacy (nombrec,apellidos,usuario,contrasena,telefono
 
 if (mysqli_query($conn,$sql)){
      
-     header("location:login.html");
+    echo'<script type="text/javascript">
+        alert("Usuario creado con éxito, Inicia sesión");
+        window.location.href="index.html";
+        </script>';
 }
 else
 {
    echo'<script type="text/javascript">
-        alert("No se pudo completar el registro");
+        alert("No se pudo completar el registro, revisa tu información");
         window.location.href="index.html";
         </script>';
 }

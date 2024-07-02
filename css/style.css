@@ -540,7 +540,7 @@ body {
   }
   
   #footer .social-links a:hover {
-    background: #1c84e3;
+    background: #228B22;
     color: #fff;
     text-decoration: none;
   }
@@ -565,7 +565,7 @@ body {
     z-index: 1000;
   }
   #cookie-consent button {
-    background-color: #84abca;
+    background-color: #228B22;
     border: none;
     padding: 10px 20px;
     margin-left: 10px;
@@ -583,7 +583,7 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color:#84abca;
+    background-color: #228B22;
     color: white;
     padding: 20px;
     display: flex;
@@ -592,7 +592,7 @@ body {
     z-index: 1000;
   }
   #cookie-consent button {
-    background-color: #0073b1;
+    background-color: #007bff;
     border: none;
     padding: 10px 20px;
     margin-left: 10px;

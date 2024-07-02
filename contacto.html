@@ -171,7 +171,22 @@
   </div>
 </footer>
 
+<script>
+  // Verificar si el usuario ya ha aceptado o denegado las cookies
+  if (localStorage.getItem('cookieConsent') === 'accepted' || localStorage.getItem('cookieConsent') === 'declined') {
+         document.getElementById('cookie-consent').style.display = 'none';
+     }
 
+     document.getElementById('accept-cookies').addEventListener('click', function() {
+         localStorage.setItem('cookieConsent', 'accepted');
+         document.getElementById('cookie-consent').style.display = 'none';
+     });
+
+     document.getElementById('decline-cookies').addEventListener('click', function() {
+         localStorage.setItem('cookieConsent', 'declined');
+         window.location.href = 'index.html';
+     });
+</script>
 
 
 <script src="js/app.js"></script>
