@@ -16,7 +16,7 @@ body {
 }
 
 .header {
-    background-color: #0073b1;
+    background-color: #228B22;
     color: white;
     padding: 32px 0;
 }
@@ -399,9 +399,9 @@ body {
   }
   
   #footer .footer-top {
-    padding: 60px 0 30px 0;
-    background: #0073b1;
-    box-shadow: 0px 2px 15px #0073b1;
+    padding: 80px 0 30px 0;
+    background: #228B22;
+    box-shadow: 0px 2px 15px #228B22;
   }
   
   #footer .footer-top .footer-contact {
@@ -527,7 +527,7 @@ body {
   #footer .social-links a {
     font-size: 18px;
     display: inline-block;
-    background: #0073b1;
+    background: #228B22;
     color: #fff;
     line-height: 1;
     padding: 8px 0;
