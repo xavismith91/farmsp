@@ -15,7 +15,7 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   
@@ -63,42 +63,151 @@
               </div>
                   <li><a href="ofertas.html">Ofertas</a></li>
                   <li><a href="contacto.html">Contacto</a></li>
+
+                  <li><a href="login.html" class="btn btn-danger my-0">Cerrar sesión</a></li>
               </ul>
           </nav>
       </div>
     </header>
-    <br><br>
+    <br>
 </body>
-<center><div class="tablauser">
-    <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otrrrrto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
+<center>
+ 
+ 
+  <div class="table-responsive-mf">
+        <table class="display table table-bordered" id="mitabla">
+          <thead>
+          <a href="registrer.html" class="btn btn-primary">Nuevo Registro</a>
+            <tr>
+              <th>Nombres</th>
+              <th>Apellido</th>
+              <th>Usuario</th>
+              <th>Contraseña</th>
+              <th>Teléfono</th>
+              <th>Dirección</th>
+              <th>Ciudad</th>
+              <th>Municipio</th>
+              <th>CP</th>
+              <!-- <th width="5%"></th>
+              <th width="5%"></th> -->
+            </tr>
+          </thead>
+  
+          <tbody>
+  
+  
+  
+                  <!-- <div class="modal fade" id="eliminaModal" tabindex="-1" aria-labelledby="eliminaModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Eliminar Registro</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            ¿Desea eliminar el registro?
+          </div>
+  
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <a class="btn btn-danger btn-ok">Eliminar</a>
+          </div>
+  
+        </div>
+      </div>
+    </div> -->
+  
+      <!-- <script>
+      $(document).ready(function() {
+        $('#mitabla').DataTable({
+          "order": [
+            [0, "asc"]
+          ],
+          "language": {
+            "lengthMenu": "Mostrar _MENU_ registros por pagina",
+            "info": "Mostrando pagina _PAGE_ de _PAGES_",
+            "infoEmpty": "No hay registros disponibles",
+            "infoFiltered": "(filtrada de _MAX_ registros)",
+            "loadingRecords": "Cargando...",
+            "processing": "Procesando...",
+            "search": "Buscar:",
+            "zeroRecords": "No se encontraron registros coincidentes",
+            "paginate": {
+              "next": "Siguiente",
+              "previous": "Anterior"
+            },
+          },
+          "bProcessing": true,
+          "bServerSide": true,
+          "sAjaxSource": "server_process.php"
+        });
+      });
+  
+      let eliminaModal = document.getElementById('eliminaModal')
+      eliminaModal.addEventListener('shown.bs.modal', event => {
+        let button = event.relatedTarget
+        let url = button.getAttribute('data-bs-href')
+        eliminaModal.querySelector('.modal-footer .btn-ok').href = url
+      })
+    </script> -->
+  
+                  <script src="js/bootstrap.bundle.min.js"></script>
+                <script src="js/jquery.min.js"></script>
+                <script src="js/datatables.min.js"></script>
+  
+  
+  <?php
+  
+          $servername = "localhost";
+          $username = "root";
+          $password = "";
+          $dbname = "pharmacy";
+  
+          // Crear conexión
+          $conn = new mysqli($servername, $username, $password, $dbname);
+  
+          // Verificar conexión
+          if ($conn->connect_error) {
+              die("Conexión fallida: " . $conn->connect_error);
+          }
+  
+          $sql = "SELECT * FROM userspharmacy";
+          $result = $conn->query($sql);
+  
+          if ($result->num_rows > 0) {
+              // Salida de datos por cada fila
+              while($row = $result->fetch_assoc()) {
+                  echo "<br>";
+  
+                  echo "<tr>
+                          <td>" . $row["nombrec"]. "</td>
+                          <td>" . $row["apellidos"]. "</td>
+                          <td>" . $row["usuario"]. "</td>
+                          <td>" . $row["contrasena"]. "</td>
+                          <td>" . $row["telefono"]. "</td>
+                          <td>" . $row["direccion"]. "</td>
+                          <td>" . $row["ciudad"]. "</td>
+                          <td>" . $row["municipio"]. "</td>
+                          <td>" . $row["cp"]. "</td>
+                          <br>
+                        </tr>";
+                  
+                 
+              }
+              
+          } else {
+              echo "<tr><td colspan='5'>No se encontraron resultados</td></tr>";
+          }
+          $conn->close();
+          session_abort();
+          ?> 
+          </tbody>
+        </table>
+      </div>
+          
+         
       </table>
+  
     </center>
   </div>
 <br><br><br>

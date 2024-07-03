@@ -46,7 +46,7 @@ if (mysqli_query($conn,$sql)){
      
     echo'<script type="text/javascript">
         alert("Usuario creado con éxito, Inicia sesión");
-        window.location.href="index.html";
+        window.location.href="login.html";
         </script>';
 }
 else

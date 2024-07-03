@@ -35,16 +35,16 @@ $filas = mysqli_fetch_array($resultado);
 
 if ($filas) 
 {
-    header("location:viewusers.html"); 
+    header("location:viewusers.php"); 
 }
 else
 {
    echo'<script type="text/javascript">
-        alert("Verifique su Información"'.$consulta["usuario"].');
-        window.location.href="login.php";
+        alert("Verifique su Información");
+        window.location.href="login.html";
         </script>';
 }
 mysqli_free_result($resultado);
 mysqli_close($conexion);
 
-?>
+?>00.
