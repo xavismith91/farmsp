@@ -18,6 +18,8 @@
   <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://kit.fontawesonme.comm/646sc4fad6.js" crossorigin="anonymous"></script>
+
   
 </head>
 
@@ -71,136 +73,53 @@
     </header>
     <br>
 </body>
-<center>
  
  
   <div class="table-responsive-mf">
         <table class="display table table-bordered" id="mitabla">
           <thead>
-          <a href="registrer.html" class="btn btn-primary">Nuevo Registro</a>
+          <center><a href="registrer.html" class="btn btn-primary">Nuevo Registro</a></center>
             <tr>
-              <th>Nombres</th>
-              <th>Apellido</th>
-              <th>Usuario</th>
-              <th>Contraseña</th>
-              <th>Teléfono</th>
-              <th>Dirección</th>
-              <th>Ciudad</th>
-              <th>Municipio</th>
-              <th>CP</th>
-              <!-- <th width="5%"></th>
-              <th width="5%"></th> -->
+              <th scope = "col">Nombres</th>
+              <th scope = "col">Apellido</th>
+              <th scope = "col">Usuario</th>
+              <th scope = "col">Contraseña</th>
+              <th scope = "col">Teléfono</th>
+              <th scope = "col">Dirección</th>
+              <th scope = "col">Ciudad</th>
+              <th scope = "col">Municipio</th>
+              <th scope = "col">CP</th>
+              <th scope = "col"></th>
             </tr>
           </thead>
   
           <tbody>
-  
-  
-  
-                  <!-- <div class="modal fade" id="eliminaModal" tabindex="-1" aria-labelledby="eliminaModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Eliminar Registro</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            ¿Desea eliminar el registro?
-          </div>
-  
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-            <a class="btn btn-danger btn-ok">Eliminar</a>
-          </div>
-  
-        </div>
-      </div>
-    </div> -->
-  
-      <!-- <script>
-      $(document).ready(function() {
-        $('#mitabla').DataTable({
-          "order": [
-            [0, "asc"]
-          ],
-          "language": {
-            "lengthMenu": "Mostrar _MENU_ registros por pagina",
-            "info": "Mostrando pagina _PAGE_ de _PAGES_",
-            "infoEmpty": "No hay registros disponibles",
-            "infoFiltered": "(filtrada de _MAX_ registros)",
-            "loadingRecords": "Cargando...",
-            "processing": "Procesando...",
-            "search": "Buscar:",
-            "zeroRecords": "No se encontraron registros coincidentes",
-            "paginate": {
-              "next": "Siguiente",
-              "previous": "Anterior"
-            },
-          },
-          "bProcessing": true,
-          "bServerSide": true,
-          "sAjaxSource": "server_process.php"
-        });
-      });
-  
-      let eliminaModal = document.getElementById('eliminaModal')
-      eliminaModal.addEventListener('shown.bs.modal', event => {
-        let button = event.relatedTarget
-        let url = button.getAttribute('data-bs-href')
-        eliminaModal.querySelector('.modal-footer .btn-ok').href = url
-      })
-    </script> -->
-  
-                  <script src="js/bootstrap.bundle.min.js"></script>
-                <script src="js/jquery.min.js"></script>
-                <script src="js/datatables.min.js"></script>
-  
-  
-  <?php
-  
-          $servername = "localhost";
-          $username = "root";
-          $password = "";
-          $dbname = "pharmacy";
-  
-          // Crear conexión
-          $conn = new mysqli($servername, $username, $password, $dbname);
-  
-          // Verificar conexión
-          if ($conn->connect_error) {
-              die("Conexión fallida: " . $conn->connect_error);
-          }
-  
-          $sql = "SELECT * FROM userspharmacy";
-          $result = $conn->query($sql);
-  
-          if ($result->num_rows > 0) {
-              // Salida de datos por cada fila
-              while($row = $result->fetch_assoc()) {
-                  echo "<br>";
-  
-                  echo "<tr>
-                          <td>" . $row["nombrec"]. "</td>
-                          <td>" . $row["apellidos"]. "</td>
-                          <td>" . $row["usuario"]. "</td>
-                          <td>" . $row["contrasena"]. "</td>
-                          <td>" . $row["telefono"]. "</td>
-                          <td>" . $row["direccion"]. "</td>
-                          <td>" . $row["ciudad"]. "</td>
-                          <td>" . $row["municipio"]. "</td>
-                          <td>" . $row["cp"]. "</td>
-                          <br>
-                        </tr>";
-                  
-                 
-              }
+            <?php 
+              include "conexion.php";
+              $sql = $conexion->query("select * from userspharmacy");
+              while($datos=$sql->fetch_object()) { ?>
+
+              <tr>
+                <th><?= $datos-> nombrec?></th>
+                <th><?= $datos-> apellidos?></th>
+                <th><?= $datos-> usuario?></th>
+                <th><?= $datos-> contrasena?></th>
+                <th><?= $datos-> telefono?></th>
+                <th><?= $datos-> direccion?></th>
+                <th><?= $datos-> ciudad?></th>
+                <th><?= $datos-> municipio?></th>
+                <th><?= $datos-> cp?></th>
+                <td>
+                  <a href="editar.html" class="btn btn-small btn-warning"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAP5JREFUSEvFlf0VgjAMxMMmuomO4iSMopvoKG6i/HyEV0LTD0qf/adQwl3ukraDdB5DZ3w5iuAkIhcRediELQFB9ymQH1LjOgG+5oDnDM7rW0T4xvwbliAM9ghi4ApIYjyfPYKPQxwj02QUEHDWmG9ql1VQSuDZoutNBGHmKFNbUEINd1sEEA0QgoS2aJEX/2NF9iyKgWtdbC1W9SqpQS04CrWFN21qFXjg3jrgKFoSzymIyU8p2licIyhVpL43EaQybyYIO2PV52aL71agOClwYqoJaq+L/xOUHNc5VWwyjvTofcBGGYMLJAdmv1MjTlJ3J9cCZuOPupNdou4EX5hRUxlWng/uAAAAAElFTkSuQmCC"/></a>
+                  <a href="eliminar" class="btn btn-small btn-danger"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAIJJREFUSEtjZKAxYKSx+QzEWODAwMCwH4dDGoHiDfgcScgCfIaDzH3AwMCQyMDAcACXJegW/KdSkMHNpbsFVPIAwhhccUBuUGGYN2oBepyNBhHBVDwaRKNBhAgBmpdFoBoMVNmQAkCVjiPBrA1VADK8ngRLcNZshKpMUnyAVS3NLQAA6kwZGR1E8YsAAAAASUVORK5CYII="/></a>
+                </td>
+              </tr>
+             <?php }
+            ?>
               
-          } else {
-              echo "<tr><td colspan='5'>No se encontraron resultados</td></tr>";
-          }
-          $conn->close();
-          session_abort();
-          ?> 
+  
+  
+  
           </tbody>
         </table>
       </div>
@@ -208,7 +127,7 @@
          
       </table>
   
-    </center>
+    
   </div>
 <br><br><br>
 <footer id="footer">
