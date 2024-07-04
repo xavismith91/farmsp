@@ -1,3 +1,11 @@
+<?php
+include "conexion.php";
+$id=$_GET['id'];
+$sql= $conexion->query("select * from userspharmacy where id_user = $id ")
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -68,44 +76,50 @@
       </div>
     </header>
     <br><br>
-    <form action="newuser.php" method="post" role="form" name="form">     
+    <form action="updateuser.php" method="post" role="form" name="form">     
       <center><div class="col-lg-7">
                 <div class="bg-light rounded p-4 p-sm-5 " data-wow-delay="0.1s">
-                  <h1>Registrarme</h1>
+                  <h1>Editar Usuario</h1>
+                  <input type="hidden" name="id" value="<?= $_GET["id"] ?>">
                   <br>
+                  <?php
+                  include "updateuser.php";
+                  while($datos = $sql->fetch_object()){ ?>
+                  <br><br>
                     <div class="row g-3">
                       <div class="col-md-6">
                         <label class="form-label">Nombres</label>
-                        <input type="text" class="form-control"  name="nombrec">
+                        <input type="text" class="form-control"  name="nombrec" value="<?= $datos-> nombrec?>">
                       </div>
                       <div class="col-md-6">
                         <label class="form-label">Apellidos</label>
-                        <input type="text" class="form-control"  name="apellidos">
+                        <input type="text" class="form-control"  name="apellidos" value="<?= $datos->apellidos ?>">
                       </div>
                       <div class="col-md-6">
                         <label class="form-label">Correo(Usuario)</label>
-                        <input type="email" class="form-control" name="usuario">
+                        <input type="email" class="form-control" name="usuario" value="<?= $datos->usuario ?>">
                       </div>
                       <div class="col-md-6">
                         <label class="form-label">Contraseña</label>
-                        <input type="password" class="form-control" name="contrasena">
+                        <input type="password" class="form-control" name="contrasena" value="<?= $datos->contrasena ?>">
                       </div>
                       <div class="col-md-6">
                         <label class="form-label">Teléfono</label>
-                        <input type="text" class="form-control"  name="telefono">
+                        <input type="text" class="form-control"  name="telefono" value="<?= $datos->telefono ?>">
                       </div>                      
                       <div class="col-lg-6">
-                        <label class="form-label">Direccióna (Referencias y Calles )</label>
-                        <input type="text" class="form-control" name="direccion">
+                        <label class="form-label">Dirección (Referencias y Calles )</label>
+                        <input type="text" class="form-control" name="direccion" value="<?= $datos->direccion ?>">
                       </div>
                       <div class="col-md-6">
                         <label class="form-label">Ciudad</label>
-                        <input type="text" class="form-control" name="ciudad">
+                        <input type="text" class="form-control" name="ciudad" value="<?= $datos->ciudad ?>">
                       </div>
                       <div class="col-md-4">
                         <label class="form-label">Municipio</label>
-                        <select id="municipio" class="form-select"  name="municipio">
+                        <select id="municipio" class="form-select"  name="municipio" value="<?= $datos->municipio?>">
                           <option selected>Colonia...</option>
+                          <option value="Sin Municipio">Sin Municipio</option>
                           <option value="Matamoros">Abejones</option>
                           <option value="Satelite">Acatlán de Pérez Figueroa</option>
                           <option value="Asunción Cacalotepec">Asunción de Cacalotepec</option>
@@ -672,8 +686,10 @@
                       </div>
                       <div class="col-md-2">
                         <label class="form-label">CP</label>
-                        <input type="text" class="form-control" id="cp" name="cp">
+                        <input type="text" class="form-control" id="cp" name="cp" value="<?= $datos->cp ?>">
                       </div>
+                      <?php }
+                      ?>
                       <!-- <div class="col-12">
                         <div class="form-check">
                           <input class="form-check-input" type="checkbox" id="gridCheck">
@@ -685,7 +701,7 @@
                       <br>
                       <br>
                       <div class="col-12">
-                        <button type="submit" class="btn btn-warning" id="btn_enviarinfo">Crear Usuario</button>
+                        <button type="submit" class="btn btn-warning" id="btn_enviarinfo">Modificar</button>
                       </div>                  
                     </div>
                 </div>

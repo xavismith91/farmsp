@@ -80,6 +80,7 @@
           <thead>
           <center><a href="registrer.html" class="btn btn-primary">Nuevo Registro</a></center>
             <tr>
+              <!-- <th scope = "col">id_user</th> -->
               <th scope = "col">Nombres</th>
               <th scope = "col">Apellido</th>
               <th scope = "col">Usuario</th>
@@ -100,17 +101,17 @@
               while($datos=$sql->fetch_object()) { ?>
 
               <tr>
-                <th><?= $datos-> nombrec?></th>
-                <th><?= $datos-> apellidos?></th>
-                <th><?= $datos-> usuario?></th>
-                <th><?= $datos-> contrasena?></th>
-                <th><?= $datos-> telefono?></th>
-                <th><?= $datos-> direccion?></th>
-                <th><?= $datos-> ciudad?></th>
-                <th><?= $datos-> municipio?></th>
-                <th><?= $datos-> cp?></th>
+                <td><?= $datos-> nombrec?></td>
+                <td><?= $datos-> apellidos?></td>
+                <td><?= $datos-> usuario?></td>
+                <td><?= $datos-> contrasena?></td>
+                <td><?= $datos-> telefono?></td>
+                <td><?= $datos-> direccion?></td>
+                <td><?= $datos-> ciudad?></td>
+                <td><?= $datos-> municipio?></td>
+                <td><?= $datos-> cp?></td>
                 <td>
-                  <a href="editar.html" class="btn btn-small btn-warning"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAP5JREFUSEvFlf0VgjAMxMMmuomO4iSMopvoKG6i/HyEV0LTD0qf/adQwl3ukraDdB5DZ3w5iuAkIhcRediELQFB9ymQH1LjOgG+5oDnDM7rW0T4xvwbliAM9ghi4ApIYjyfPYKPQxwj02QUEHDWmG9ql1VQSuDZoutNBGHmKFNbUEINd1sEEA0QgoS2aJEX/2NF9iyKgWtdbC1W9SqpQS04CrWFN21qFXjg3jrgKFoSzymIyU8p2licIyhVpL43EaQybyYIO2PV52aL71agOClwYqoJaq+L/xOUHNc5VWwyjvTofcBGGYMLJAdmv1MjTlJ3J9cCZuOPupNdou4EX5hRUxlWng/uAAAAAElFTkSuQmCC"/></a>
+                  <a href="updateusers.php?id=<?=$datos-> id_user?>" class="btn btn-small btn-warning"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAP5JREFUSEvFlf0VgjAMxMMmuomO4iSMopvoKG6i/HyEV0LTD0qf/adQwl3ukraDdB5DZ3w5iuAkIhcRediELQFB9ymQH1LjOgG+5oDnDM7rW0T4xvwbliAM9ghi4ApIYjyfPYKPQxwj02QUEHDWmG9ql1VQSuDZoutNBGHmKFNbUEINd1sEEA0QgoS2aJEX/2NF9iyKgWtdbC1W9SqpQS04CrWFN21qFXjg3jrgKFoSzymIyU8p2licIyhVpL43EaQybyYIO2PV52aL71agOClwYqoJaq+L/xOUHNc5VWwyjvTofcBGGYMLJAdmv1MjTlJ3J9cCZuOPupNdou4EX5hRUxlWng/uAAAAAElFTkSuQmCC"/></a>
                   <a href="eliminar" class="btn btn-small btn-danger"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAIJJREFUSEtjZKAxYKSx+QzEWODAwMCwH4dDGoHiDfgcScgCfIaDzH3AwMCQyMDAcACXJegW/KdSkMHNpbsFVPIAwhhccUBuUGGYN2oBepyNBhHBVDwaRKNBhAgBmpdFoBoMVNmQAkCVjiPBrA1VADK8ngRLcNZshKpMUnyAVS3NLQAA6kwZGR1E8YsAAAAASUVORK5CYII="/></a>
                 </td>
               </tr>
