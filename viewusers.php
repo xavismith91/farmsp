@@ -80,7 +80,7 @@
           <thead>
           <center><a href="registrer.html" class="btn btn-primary">Nuevo Registro</a></center>
             <tr>
-              <!-- <th scope = "col">id_user</th> -->
+              <th scope = "col">id_user</th>
               <th scope = "col">Nombres</th>
               <th scope = "col">Apellido</th>
               <th scope = "col">Usuario</th>
@@ -101,6 +101,7 @@
               while($datos=$sql->fetch_object()) { ?>
 
               <tr>
+                <td><?= $datos-> id_user?></td>
                 <td><?= $datos-> nombrec?></td>
                 <td><?= $datos-> apellidos?></td>
                 <td><?= $datos-> usuario?></td>
