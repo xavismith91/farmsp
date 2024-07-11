@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Med Pharmacy</title>
+    <title>Farmacia Mayito</title>
     <link rel="stylesheet" href="css/style.css">
 
     <link href="img/logosinfondo.png" rel="icon">
@@ -79,6 +79,10 @@
         <table class="display table table-bordered" id="mitabla">
           <thead>
           <center><a href="registrer.html" class="btn btn-primary">Nuevo Registro</a></center>
+          <?php         
+          include "conexion.php";
+          include "eliminar_persona.php";
+          ?>
             <tr>
               <th scope = "col">id_user</th>
               <th scope = "col">Nombres</th>
@@ -96,7 +100,7 @@
   
           <tbody>
             <?php 
-              include "conexion.php";
+             
               $sql = $conexion->query("select * from userspharmacy");
               while($datos=$sql->fetch_object()) { ?>
 
@@ -113,7 +117,7 @@
                 <td><?= $datos-> cp?></td>
                 <td>
                   <a href="updateusers.php?id=<?=$datos-> id_user?>" class="btn btn-small btn-warning"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAP5JREFUSEvFlf0VgjAMxMMmuomO4iSMopvoKG6i/HyEV0LTD0qf/adQwl3ukraDdB5DZ3w5iuAkIhcRediELQFB9ymQH1LjOgG+5oDnDM7rW0T4xvwbliAM9ghi4ApIYjyfPYKPQxwj02QUEHDWmG9ql1VQSuDZoutNBGHmKFNbUEINd1sEEA0QgoS2aJEX/2NF9iyKgWtdbC1W9SqpQS04CrWFN21qFXjg3jrgKFoSzymIyU8p2licIyhVpL43EaQybyYIO2PV52aL71agOClwYqoJaq+L/xOUHNc5VWwyjvTofcBGGYMLJAdmv1MjTlJ3J9cCZuOPupNdou4EX5hRUxlWng/uAAAAAElFTkSuQmCC"/></a>
-                  <a href="eliminar" class="btn btn-small btn-danger"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAIJJREFUSEtjZKAxYKSx+QzEWODAwMCwH4dDGoHiDfgcScgCfIaDzH3AwMCQyMDAcACXJegW/KdSkMHNpbsFVPIAwhhccUBuUGGYN2oBepyNBhHBVDwaRKNBhAgBmpdFoBoMVNmQAkCVjiPBrA1VADK8ngRLcNZshKpMUnyAVS3NLQAA6kwZGR1E8YsAAAAASUVORK5CYII="/></a>
+                  <a href="eliminar_persona.php?id=<?=$datos-> id_user?>"  class="btn btn-small btn-danger"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAIJJREFUSEtjZKAxYKSx+QzEWODAwMCwH4dDGoHiDfgcScgCfIaDzH3AwMCQyMDAcACXJegW/KdSkMHNpbsFVPIAwhhccUBuUGGYN2oBepyNBhHBVDwaRKNBhAgBmpdFoBoMVNmQAkCVjiPBrA1VADK8ngRLcNZshKpMUnyAVS3NLQAA6kwZGR1E8YsAAAAASUVORK5CYII="/></a>
                 </td>
               </tr>
              <?php }

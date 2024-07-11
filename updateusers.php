@@ -11,7 +11,7 @@ $sql= $conexion->query("select * from userspharmacy where id_user = $id ")
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Med Pharmacy</title>
+    <title>Farmacia Mayito</title>
     <link rel="stylesheet" href="css/style.css">
 
     <link href="img/logosinfondo.png" rel="icon">
@@ -83,7 +83,7 @@ $sql= $conexion->query("select * from userspharmacy where id_user = $id ")
                   <input type="hidden" name="id" value="<?= $_GET["id"] ?>">
                   <br>
                   <?php
-                  include "updateuser.php";
+                 include "conexion.php";
                   while($datos = $sql->fetch_object()){ ?>
                   <br><br>
                     <div class="row g-3">
