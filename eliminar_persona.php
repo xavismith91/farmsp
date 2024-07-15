@@ -1,7 +1,11 @@
 <?php
 
-if (!empty($_GET["id"]))   {
+include("conexion.php");
+
+
+ if (!empty($_GET["id"]))   {
     $id=$_GET["id"];
+    
     $sql=$conexion->query("delete from userspharmacy where id_user = $id");
 
     if ($sql==1) {

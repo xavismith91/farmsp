@@ -118,7 +118,7 @@ $sql= $conexion->query("select * from userspharmacy where id_user = $id ")
                       <div class="col-md-4">
                         <label class="form-label">Municipio</label>
                         <select id="municipio" class="form-select"  name="municipio" value="<?= $datos->municipio?>">
-                          <option selected>Colonia...</option>
+                          <!-- <option selected>Colonia...</option> -->
                           <option value="Sin Municipio">Sin Municipio</option>
                           <option value="Matamoros">Abejones</option>
                           <option value="Satelite">Acatlán de Pérez Figueroa</option>
