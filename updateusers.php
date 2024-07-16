@@ -76,7 +76,7 @@ $sql= $conexion->query("select * from userspharmacy where id_user = $id ")
       </div>
     </header>
     <br><br>
-    <form method="post" role="form" name="form">     
+    <form  action="updateuser.php" method="post" role="form" name="form">     
       <center><div class="col-lg-7">
                 <div class="bg-light rounded p-4 p-sm-5 " data-wow-delay="0.1s">
                   <h1>Editar Usuario</h1>
@@ -84,56 +84,49 @@ $sql= $conexion->query("select * from userspharmacy where id_user = $id ")
                   <br>
                   <?php
                   include "conexion.php";
+                  include "updateuser.php";
                   while($datos = $sql->fetch_object()){ ?>
                   <br><br>
                     <div class="row g-3">
                       <div class="col-md-6">
                         <label class="form-label">Nombres</label>
-                        <input type="text" class="form-control"  name="nombrec" value="<?= $datos-> nombrec?>">
+                        <input type="text" class="form-control"  name="nombrec" value="<?= $datos-> nombrec?>" required>
                       </div>
                       <div class="col-md-6">
                         <label class="form-label">Apellidos</label>
-                        <input type="text" class="form-control"  name="apellidos" value="<?= $datos->apellidos ?>">
+                        <input type="text" class="form-control"  name="apellidos" value="<?= $datos->apellidos ?>" required>
                       </div>
                       <div class="col-md-6">
                         <label class="form-label">Correo(Usuario)</label>
-                        <input type="email" class="form-control" name="usuario" value="<?= $datos->usuario ?>">
+                        <input type="email" class="form-control" name="usuario" value="<?= $datos->usuario ?>" required>
                       </div>
                       <div class="col-md-6">
                         <label class="form-label">Contraseña</label>
-                        <input type="password" class="form-control" name="contrasena" value="<?= $datos->contrasena ?>">
+                        <input type="password" class="form-control" name="contrasena" value="<?= $datos->contrasena ?>" required>
                       </div>
                       <div class="col-md-6">
                         <label class="form-label">Teléfono</label>
-                        <input type="text" class="form-control"  name="telefono" value="<?= $datos->telefono ?>">
+                        <input type="text" class="form-control"  name="telefono" value="<?= $datos->telefono ?>" required>
                       </div>                      
                       <div class="col-lg-6">
                         <label class="form-label">Dirección (Referencias y Calles )</label>
-                        <input type="text" class="form-control" name="direccion" value="<?= $datos->direccion ?>">
+                        <input type="text" class="form-control" name="direccion" value="<?= $datos->direccion ?>" required>
                       </div>
                       <div class="col-md-6">
                         <label class="form-label">Ciudad</label>
-                        <input type="text" class="form-control" name="ciudad" value="<?= $datos->ciudad ?>">
+                        <input type="text" class="form-control" name="ciudad" value="<?= $datos->ciudad ?>" required> 
                       </div>
                       <div class="col-md-4">
                         <label class="form-label">Municipio</label>
-                        <input type="text" class="form-control" name="municipio" value="<?= $datos->municipio ?>">
+                        <input type="text" class="form-control" name="municipio" value="<?= $datos->municipio ?>" required>
                       </div>
                       <div class="col-md-2">
                         <label class="form-label">CP</label>
-                        <input type="text" class="form-control" id="cp" name="cp" value="<?= $datos->cp ?>">
+                        <input type="text" class="form-control" id="cp" name="cp" value="<?= $datos->cp ?>" required>
                       </div>
                       <?php }
                       ?>
-                      <!-- <div class="col-12">
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" id="gridCheck">
-                          <label class="form-check-label" for="gridCheck">
-                            Acepto Términos y Condiciones
-                          </label>
-                        </div>
-                      </div> -->
-                      <br>
+                       <br>
                       <br>
                       <div class="col-12">
                         <button type="submit" class="btn btn-warning" name="btn_enviarinfo">Modificar</button>
