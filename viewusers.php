@@ -83,8 +83,7 @@
           include "conexion.php";
           include "eliminar_persona.php";
           ?>
-            <tr>
-              <th scope = "col">id_user</th>
+            <tr class="table-dark">
               <th scope = "col">Nombres</th>
               <th scope = "col">Apellido</th>
               <th scope = "col">Usuario</th>
@@ -98,14 +97,13 @@
             </tr>
           </thead>
   
-          <tbody>
+          <tbody class="table-success">
             <?php 
              
               $sql = $conexion->query("select * from userspharmacy");
               while($datos=$sql->fetch_object()) { ?>
 
               <tr>
-                <td><?= $datos-> id_user?></td>
                 <td><?= $datos-> nombrec?></td>
                 <td><?= $datos-> apellidos?></td>
                 <td><?= $datos-> usuario?></td>

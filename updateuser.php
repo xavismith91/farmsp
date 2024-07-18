@@ -31,7 +31,7 @@ if(!$conn)
 {
     die("Falló la conexion: ". mysqli_connect_error()); 
 }else
-echo "Conexion exitosa";
+echo "";
 
 
 //hacemos el query para insertar registros 
@@ -40,7 +40,10 @@ $sql = "update userspharmacy set nombrec = '$nombrec', apellidos = '$apellidos',
 
 if (mysqli_query($conn,$sql)){
      
-    header("location:viewusers.php");
+    echo'<script type="text/javascript">
+       alert("Registro actualizado Exitosamente");
+       window.location.href="viewusers.php";
+       </script>';
 }
 else
 {
