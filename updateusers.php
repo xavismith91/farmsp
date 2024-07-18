@@ -76,7 +76,7 @@ $sql= $conexion->query("select * from userspharmacy where id_user = $id ")
       </div>
     </header>
     <br><br>
-    <form method="post" role="form" name="form">     
+    <form action="updateuser.php" method="post" role="form" name="form">     
       <center><div class="col-lg-7">
                 <div class="bg-light rounded p-4 p-sm-5 " data-wow-delay="0.1s">
                   <h1>Editar Usuario</h1>
