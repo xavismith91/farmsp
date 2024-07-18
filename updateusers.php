@@ -76,11 +76,7 @@ $sql= $conexion->query("select * from userspharmacy where id_user = $id ")
       </div>
     </header>
     <br><br>
-<<<<<<< HEAD
-    <form action="updateuser.php" method="post" role="form" name="form">     
-=======
     <form  action="updateuser.php" method="post" role="form" name="form">     
->>>>>>> a1bd693b59de19fed294fa4d0e79fde581eb31d2
       <center><div class="col-lg-7">
                 <div class="bg-light rounded p-4 p-sm-5 " data-wow-delay="0.1s">
                   <h1>Editar Usuario</h1>
@@ -88,7 +84,6 @@ $sql= $conexion->query("select * from userspharmacy where id_user = $id ")
                   <br>
                   <?php
                   include "conexion.php";
-                  include "updateuser.php";
                   while($datos = $sql->fetch_object()){ ?>
                   <br><br>
                     <div class="row g-3">
