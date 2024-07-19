@@ -5,7 +5,7 @@ session_start();
 
 
 // Conectarse a la base de datos
-$db = new mysqli('localhost', 'root', '', 'sistema');
+$db = new mysqli('localhost', 'root', '', 'pharmacy');
 
 // Validar si la conexión fue exitosa
 if ($db->connect_error) {
@@ -16,7 +16,7 @@ if ($db->connect_error) {
 $correo = $_POST['correo'];
 
 // Consulta SQL para verificar si el correo electrónico existe en la base de datos
-$sql = "SELECT * FROM usuarios WHERE correo = '$correo'";
+$sql = "SELECT * FROM userspharmacy WHERE correo = '$correo'";
 $resultado = $db->query($sql);
 
 // Validar si la consulta encontró un registro
