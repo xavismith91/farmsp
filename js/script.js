@@ -14,3 +14,14 @@ function moveToRight() {
 function moveToLeft() {
 
 }
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const buttons = document.querySelectorAll(".category-bar button");
+
+  buttons.forEach(button => {
+      button.addEventListener("click", () => {
+          alert(`Has seleccionado la categoría: ${button.textContent}`);
+      });
+  });
+});
